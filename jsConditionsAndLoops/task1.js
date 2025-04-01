@@ -1,7 +1,7 @@
 const averageGrade = Math.round(Math.random() * 100);
 console.log(`Оцінка: ${averageGrade}`);
 
-if (averageGrade < 60) {
+if (averageGrade >= 0 && averageGrade < 60) {
     console.log("Незадовільно");
 } else if (averageGrade <= 70) {
     console.log("Задовільно");
