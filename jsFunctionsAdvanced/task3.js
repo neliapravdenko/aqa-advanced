@@ -11,7 +11,7 @@ const divide = (numerator, denominator) => {
 try {
     divide(102, 15);
 } catch (error) {
-    console.error("Error occured: ", error.message);
+    console.error("Error occurred: ", error.message);
 } finally {
     console.log("The work is over.");
 }
@@ -20,7 +20,7 @@ try {
     divide(23, 0);
 
 } catch (error) {
-    console.error("Error occured: ", error.message);
+    console.error("Error occurred: ", error.message);
 } finally {
     console.log("The work is over.");
 }
@@ -29,7 +29,7 @@ try {
     divide("hi", 8);
 
 } catch (error) {
-    console.error("Error occured: ", error.message);
+    console.error("Error occurred: ", error.message);
 } finally {
     console.log("The work is over.");
 }
