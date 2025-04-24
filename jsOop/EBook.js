@@ -11,7 +11,7 @@ export class EBook extends Book {
     }
 
     get format() {
-        return `EBook is available in ${this._format} format!`
+        return this._format;
     }
 
     set format(newFormat) {

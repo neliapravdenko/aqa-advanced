@@ -1,18 +1,24 @@
 export class Book {
+    static instances = [];
     constructor(name, bookAuthor, year) {
         this._name = name;
         this._author = bookAuthor;
         this._year = year;
+        Book.instances.push(this);
     }
 
     printInfo() {
         console.log(`Book "${this._name}" was written by ${this._author} in the ${this._year}.`)
     }
 
-
+    static getTheOldestBook() {
+        if (Book.instances.length === 0) return null;
+        const sorted = [...Book.instances].sort((a, b) => a._year - b._year);
+        return sorted[0];
+    }
 
     get name() {
-        return `${this._name} (book name in lowercase: ${this._name.toLowerCase()})`;
+        return this._name;
     }
 
     set name(newName) {
@@ -24,7 +30,7 @@ export class Book {
     }
 
     get author() {
-        return `The ${this._name} book author's name written in upper case is: ${this._author.toUpperCase()}`;
+        return this._author;
     }
 
     set author(newAuthor) {
@@ -38,8 +44,7 @@ export class Book {
 
     get age() {
         const currentYear = new Date().getFullYear();
-        const bookAge = currentYear - this._year;
-        return `The book "${this._name}" was written ${bookAge} years ago.`;
+        return currentYear - this._year;
     }
 
     set year(newYear) {
