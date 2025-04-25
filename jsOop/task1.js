@@ -33,4 +33,5 @@ ebook.format = "EPUBB"
 const oldestBook = Book.getTheOldestBook();
 console.log(oldestBook);
 
-
+const allEBooks = EBook.getAllAsEBooks("EPUB");
+allEBooks.forEach(ebook => ebook.printInfo());

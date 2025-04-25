@@ -10,6 +10,14 @@ export class EBook extends Book {
         console.log(`E-Book "${this.name}" was written by ${this.author} in ${this.year}, format: ${this._format}.`);
     }
 
+    static getAllAsEBooks(format = "PDF") {
+        return Book.instances.map(book => EBook.toEBook(book, format));
+    }
+
+    static toEBook(book, format) {
+        return new EBook(book.name, book.author, book.year, format);
+    }
+
     get format() {
         return this._format;
     }
@@ -21,10 +29,6 @@ export class EBook extends Book {
             return;
         }
         this._format = newFormat;
-    }
-
-    static get supportedFormats() {
-        return ["EPUB", "PDF", "MOBI"];
     }
 }
 

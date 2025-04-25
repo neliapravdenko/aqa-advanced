@@ -23,7 +23,7 @@ export class Book {
 
     set name(newName) {
         if (newName.length < 3) {
-            console.log(`"${this._name}" book name is too short!`);
+            console.log(`"${newName}" book name is too short!`);
             return;
         }
         this._name = newName;
@@ -45,6 +45,10 @@ export class Book {
     get age() {
         const currentYear = new Date().getFullYear();
         return currentYear - this._year;
+    }
+
+    get year() {
+        return this._year;
     }
 
     set year(newYear) {
