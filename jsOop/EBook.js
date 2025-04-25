@@ -11,7 +11,9 @@ export class EBook extends Book {
     }
 
     static getAllAsEBooks(format = "PDF") {
-        return Book.instances.map(book => EBook.toEBook(book, format));
+        return Book.instances
+            .filter(book => !(book instanceof EBook))
+            .map(book => EBook.toEBook(book, format));
     }
 
     static toEBook(book, format) {
@@ -23,7 +25,7 @@ export class EBook extends Book {
     }
 
     set format(newFormat) {
-        const allowed = ["EPUB", "PDF", "MOBI", "Paperback", "Hardcover"];
+        const allowed = ["EPUB", "PDF", "MOBI"];
         if (!allowed.includes(newFormat)) {
             console.log(`${newFormat} is not relevant book format!`);
             return;

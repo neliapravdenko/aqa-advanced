@@ -11,7 +11,7 @@ const philosophyBook = new Book("The Subtle Art of Not Giving a F*ck", "Mark Man
 philosophyBook.printInfo();
 
 
-const ebook = new EBook("The Girl with the Dragon Tattoo", "Stieg Larsson", 2005, "PDF");
+const ebook = new EBook("The Girl with the Dragon Tattoo", "Stieg Larsson", 2005, "MOBI");
 ebook.printInfo();
 
 
@@ -30,8 +30,10 @@ ebook.year = 1700;
 
 ebook.format = "EPUBB"
 
+//receiving the oldest book
 const oldestBook = Book.getTheOldestBook();
 console.log(oldestBook);
 
+//converting books to ebooks
 const allEBooks = EBook.getAllAsEBooks("EPUB");
 allEBooks.forEach(ebook => ebook.printInfo());
