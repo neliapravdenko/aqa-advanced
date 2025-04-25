@@ -13,8 +13,8 @@ export class Book {
 
     static getTheOldestBook() {
         if (Book.instances.length === 0) return null;
-        const sorted = [...Book.instances].sort((a, b) => a._year - b._year);
-        return sorted[0];
+        const sortedByYear = [...Book.instances].sort((a, b) => a._year - b._year);
+        return sortedByYear[0];
     }
 
     get name() {
