@@ -8,7 +8,7 @@ function fetchData(id) {
         })
 }
 
-fetchData(123456)
+fetchData(1)
     .then(todo => {
         console.log(todo);
         return todo;
