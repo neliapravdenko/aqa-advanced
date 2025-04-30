@@ -1,4 +1,4 @@
-const textLine = "Homework";
+const textLine = 'Homework';
 const homeworkNumber = 4;
 const isManualQa = true;
 const emptyItem = null;

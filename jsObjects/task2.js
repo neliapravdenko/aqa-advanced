@@ -1,8 +1,8 @@
 const book = {
-    title: "The Midnight Library",
-    author: "Matt Haig",
-    year: 2020
-}
+	title: 'The Midnight Library',
+	author: 'Matt Haig',
+	year: 2020,
+};
 
 const { title, author } = book;
 
